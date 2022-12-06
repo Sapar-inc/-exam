@@ -1,0 +1,94 @@
+.p_input{
+    margin: 0;
+    font-size: 29px;
+    font-family: Impact, Charcoal, sans-serif;
+}
+body{
+    background-color: rgba(151, 151, 151, 0.382);
+    text-align: center;
+}
+input{
+    text-align: center;
+    width: 250px;
+    height: 30px;
+    font-size: 25px;
+    font-family: Impact, Charcoal, sans-serif;
+}
+#login_block{
+    margin: auto;
+    margin-top: 8%;
+    display: grid;
+    grid-template-columns: 450px;
+    grid-auto-rows: 29px;
+    justify-content: center;
+    justify-items: center;
+    gap: 10px;
+    width: 500px;
+    background-color: orangered;
+    height: 500px;
+    border-radius: 30px;
+}
+.btn{
+    cursor: pointer;
+    border-radius: 10px;
+    border: 0;
+    background-color: greenyellow;
+    margin-right: 5px;
+    margin-top: 5px;
+    width: 150px;
+    height: 50px;
+    font-size: 15px;
+    font-family: Impact, Charcoal, sans-serif;
+}
+.btn:active{
+    background-color: rgb(137, 204, 37);
+    color: rgb(61, 61, 61);
+}
+#select_product{
+    margin: 0;
+    font-size: 20px;
+    font-family: Impact, Charcoal, sans-serif;
+}
+#product{ 
+    z-index: 0;
+}
+#product>div{
+    background-color: orangered;
+}
+#product>div>p{
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 25px;
+}
+#product>div>h4{
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 25px;
+}
+.p_h1{
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 50px;
+}
+#carts_div{
+    
+    display:grid; 
+    grid-template-columns: 250px 250px 250px 250px; 
+    grid-auto-rows:350px; 
+    gap: 10px; 
+    justify-items: center; 
+    justify-content: center;   
+    z-index: 1;
+}
+#carts_div > div{
+    background-color: orangered;
+}
+#carts_div>div>p{
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 25px;
+}
+#carts_div>div>h4{
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 25px;
+}
+#carts_div>h4{
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 25px;
+}   
