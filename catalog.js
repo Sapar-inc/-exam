@@ -165,7 +165,8 @@ for(let item of carts){
     }
     let sumPrice = 0
     for(let item of carts2){
-       sumPrice += +item.price
+            sumPrice += +item.price
+       
     }
     for(let i = 0; i < res.length; i++){
         if(res[i].userId == userIndex){
@@ -181,19 +182,28 @@ for(let item of carts){
     }  
         cartsDiv.innerHTML += `
         <div style="background-color:rgba(255, 68, 0, 0);">
-            <h4>Итого: ${sumPrice}$</h4><button class="btn" onclick ="deleteCarts()">Удалить весь список</button>
+            <h4 id="total">Итого: ${sumPrice}$</h4><button class="btn" onclick ="deleteCarts()">Удалить весь список</button>
             <button class="btn" onclick="buy()">Купить</button>
         </div>
 
-`
-        
+`   
 }
+
+
 const buy = () =>{
-    for(let item of carts){
-        if(item.userId == userIndex){
-            alert(`${item.title}, ${item.sum}`)
-        }
-    }
+
+   let arrBuy
+
+   let EmailUser = user[userIndex].email
+
+   for(let item of res){
+    total += +item.price 
+    arrBuy += `${item.title}: ${item.price}, ${item.sum} шт. \n`
+    
+   }
+   let arrBuyStr = arrBuy.replaceAll("undefined","") + document.querySelector("#total").innerText
+   alert("ты купил, молодец))) Твой чек на почте")
+   sendEmail(EmailUser,"Мои покупки", arrBuyStr)
 }
 
 
@@ -202,6 +212,18 @@ const deleteCarts = () =>{
     localStorage.removeItem("carts")
     location.href ="index2.html"
 }
-// const table = {};
-// res = carts2.filter(({title}) =>(!table[title] && (table[title] = 1)),{});
-// console.log(carts2)
+
+const sendEmail = (email,subject, message) =>{
+    const templateParams = {
+        subject: subject,
+        message: message,
+        to_email: email,
+    }
+     
+    emailjs.send('service_zzj0zf4', 'template_zfd5wi8', templateParams)
+        .then(function(response) {
+           console.log('SUCCESS!', response.status, response.text)
+        }, function(error) {
+           console.log('FAILED...', error)
+        })
+}
