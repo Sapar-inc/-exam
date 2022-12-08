@@ -1,6 +1,6 @@
 let loginBlock = document.querySelector("#login_block")
 let localUser =JSON.parse(localStorage.getItem("user")) || []
-let codeEmail = JSON.parse(localStorage.getItem("code")) || []
+let codeEmail = JSON.parse(localStorage.getItem("code")) 
 
 const drawLogin = () =>{
     loginBlock.innerHTML = ""
